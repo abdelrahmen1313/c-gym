@@ -1,27 +1,30 @@
 #include <stdio.h>
+#include <math.h>
 
-int addition(int *first_number, int *second_number)
+#define EPSILON 1e-6f
+
+float addition(float *first_number, float *second_number)
 {
     return *first_number + *second_number;
 }
 
-int substraction(int *first_number, int *second_number)
+float subtraction(float *first_number, float *second_number)
 {
     return *first_number - *second_number;
 }
 
-int multiplication(int *first_number, int *second_number)
+float multiplication(float *first_number, float *second_number)
 {
     return *first_number * *second_number;
 }
 
-int division(int *first_number, int *second_number)
+float division(float *first_number, float *second_number)
 {
 
-    if (*second_number == 0)
+    if (fabsf(*second_number) < EPSILON)
     {
         printf("Division by zero prohibited\n");
-        return -1;
+        return nanf("");
     }
 
     return *first_number / *second_number;
@@ -29,34 +32,34 @@ int division(int *first_number, int *second_number)
 
 int main()
 {
-    int first_num;
-    int second_num;
-    char operator;
+    float first_num;
+    float second_num;
+    char op;
 
-    printf("welcome to the c calculator\n");
+    printf("Welcome to the C calculator\n");
     printf("------------ I LOVE MATHS ----------------\n\n");
-    printf("----- so i created a calculator that only do the addition --------\n");
+    printf("----- so i created a calculator that supports +, -, *, and / --------\n");
 
    
 
     printf("type your first number\n");
-    scanf("%d", &first_num);
+    scanf("%f", &first_num);
 
     printf("type your second number\n");
-    scanf("%d", &second_num);
+    scanf("%f", &second_num);
 
     printf("type your operator (+ - * /)");
-    scanf(" %c", &operator);
+    scanf(" %c", &op);
 
-    int result;
+    float result;
 
-    switch (operator)
+    switch (op)
     {
     case '+':
         result = addition(&first_num, &second_num);
         break;
     case '-':
-        result = substraction(&first_num, &second_num);
+        result = subtraction(&first_num, &second_num);
         break;
     case '*':
         result = multiplication(&first_num, &second_num);
@@ -69,6 +72,13 @@ int main()
         return 1;
     }
 
-    printf("result: %d\n", result);
+    if (isnan(result))
+    {
+        printf("result: undefined (division by zero)\n");
+    }
+    else
+    {
+        printf("result: %f\n", result);
+    }
     return 0;
 }
