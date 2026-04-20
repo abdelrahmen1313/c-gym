@@ -1,27 +1,27 @@
 #include <stdio.h>
 
-int addition(int *first_number, int *second_number)
+float addition(float *first_number, float *second_number)
 {
     return *first_number + *second_number;
 }
 
-int substraction(int *first_number, int *second_number)
+float substraction(float *first_number, float *second_number)
 {
     return *first_number - *second_number;
 }
 
-int multiplication(int *first_number, int *second_number)
+float multiplication(float *first_number, float *second_number)
 {
     return *first_number * *second_number;
 }
 
-int division(int *first_number, int *second_number)
+float division(float *first_number, float *second_number)
 {
 
-    if (*second_number == 0)
+    if (*second_number == 0.0f)
     {
         printf("Division by zero prohibited\n");
-        return -1;
+        return -1.0f;
     }
 
     return *first_number / *second_number;
@@ -29,8 +29,8 @@ int division(int *first_number, int *second_number)
 
 int main()
 {
-    int first_num;
-    int second_num;
+    float first_num;
+    float second_num;
     char operator;
 
     printf("welcome to the c calculator\n");
@@ -40,15 +40,15 @@ int main()
    
 
     printf("type your first number\n");
-    scanf("%d", &first_num);
+    scanf("%f", &first_num);
 
     printf("type your second number\n");
-    scanf("%d", &second_num);
+    scanf("%f", &second_num);
 
     printf("type your operator (+ - * /)");
     scanf(" %c", &operator);
 
-    int result;
+    float result;
 
     switch (operator)
     {
@@ -69,6 +69,6 @@ int main()
         return 1;
     }
 
-    printf("result: %d\n", result);
+    printf("result: %f\n", result);
     return 0;
 }
