@@ -32,11 +32,11 @@ int main()
 {
     float first_num;
     float second_num;
-    char operator;
+    char op;
 
     printf("Welcome to the C calculator\n");
     printf("------------ I LOVE MATHS ----------------\n\n");
-    printf("----- so i created a calculator that only do the addition --------\n");
+    printf("----- so i created a calculator that only does the addition --------\n");
 
    
 
@@ -47,11 +47,11 @@ int main()
     scanf("%f", &second_num);
 
     printf("type your operator (+ - * /)");
-    scanf(" %c", &operator);
+    scanf(" %c", &op);
 
     float result;
 
-    switch (operator)
+    switch (op)
     {
     case '+':
         result = addition(&first_num, &second_num);
