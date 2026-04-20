@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 float addition(float *first_number, float *second_number)
 {
@@ -18,7 +19,7 @@ float multiplication(float *first_number, float *second_number)
 float division(float *first_number, float *second_number)
 {
 
-    if (*second_number == 0.0f)
+    if (fabsf(*second_number) < 1e-6f)
     {
         printf("Division by zero prohibited\n");
         return -1.0f;
