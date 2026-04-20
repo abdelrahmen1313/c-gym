@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define EPSILON 1e-6f
+#define EPSILON 1e-6f // determine nearly zero floats on 1e-6 float approximation
 
 float addition(float *first_number, float *second_number)
 {
