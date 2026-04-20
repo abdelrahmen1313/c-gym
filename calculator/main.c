@@ -22,7 +22,7 @@ float division(float *first_number, float *second_number)
     if (fabsf(*second_number) < 1e-6f)
     {
         printf("Division by zero prohibited\n");
-        return -1.0f;
+        return nanf("");
     }
 
     return *first_number / *second_number;
@@ -34,7 +34,7 @@ int main()
     float second_num;
     char operator;
 
-    printf("welcome to the c calculator\n");
+    printf("Welcome to the C calculator\n");
     printf("------------ I LOVE MATHS ----------------\n\n");
     printf("----- so i created a calculator that only do the addition --------\n");
 
