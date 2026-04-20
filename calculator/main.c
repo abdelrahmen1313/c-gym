@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+#define EPSILON 1e-6f
+
 float addition(float *first_number, float *second_number)
 {
     return *first_number + *second_number;
@@ -19,7 +21,7 @@ float multiplication(float *first_number, float *second_number)
 float division(float *first_number, float *second_number)
 {
 
-    if (fabsf(*second_number) < 1e-6f)
+    if (fabsf(*second_number) < EPSILON)
     {
         printf("Division by zero prohibited\n");
         return nanf("");
