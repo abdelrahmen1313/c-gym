@@ -38,7 +38,7 @@ int main()
 
     printf("Welcome to the C calculator\n");
     printf("------------ I LOVE MATHS ----------------\n\n");
-    printf("----- so i created a calculator that only does the addition --------\n");
+    printf("----- so i created a calculator that supports +, -, *, and / --------\n");
 
    
 
