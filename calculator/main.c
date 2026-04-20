@@ -5,7 +5,7 @@ float addition(float *first_number, float *second_number)
     return *first_number + *second_number;
 }
 
-float substraction(float *first_number, float *second_number)
+float subtraction(float *first_number, float *second_number)
 {
     return *first_number - *second_number;
 }
@@ -56,7 +56,7 @@ int main()
         result = addition(&first_num, &second_num);
         break;
     case '-':
-        result = substraction(&first_num, &second_num);
+        result = subtraction(&first_num, &second_num);
         break;
     case '*':
         result = multiplication(&first_num, &second_num);
