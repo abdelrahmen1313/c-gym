@@ -70,6 +70,13 @@ int main()
         return 1;
     }
 
-    printf("result: %f\n", result);
+    if (isnan(result))
+    {
+        printf("result: undefined (division by zero)\n");
+    }
+    else
+    {
+        printf("result: %f\n", result);
+    }
     return 0;
 }
